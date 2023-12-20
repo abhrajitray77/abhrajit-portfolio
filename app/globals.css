@@ -25,7 +25,7 @@
 
 @layer base {
   body {
-    @apply bg-neutral-200;
+    @apply bg-neutral-200 text-neutral-900;
   }
 }
 
