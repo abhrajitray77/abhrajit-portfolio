@@ -2,7 +2,7 @@ import React from "react";
 
 const SideStrips = () => {
   return (
-    <div className="flex flex-col my-10 h-[90%] w-6 mx-2 relative">
+    <div className="flex flex-col my-10 h-[90%] md:w-4 lg:w-6 mx-2 relative">
       <div className="flex flex-col justify-between h-full space-y-1">
         <div className="flex flex-col space-y-1">
           <span className="bg-neutral-500 w-full h-4"></span>

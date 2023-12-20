@@ -9,7 +9,7 @@ export default function Home() {
         <Background />
       </div> */}
       {/* Hero section */}
-      <section className='max-w-6xl mx-auto px-4 md:px-10 py-4'>
+      <section className='max-w-6xl mx-auto px-4 lg:px-10 py-4'>
         <Hero />
       </section>
     </main>
