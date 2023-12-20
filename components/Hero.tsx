@@ -1,6 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import propic from "@/public/assets/noBgPic.png";
+import { socialLinks } from "@/app/lib/socialsData";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Socials from "./Socials";
 
 const Hero = () => {
   return (
@@ -24,34 +28,36 @@ const Hero = () => {
             </h2>
           </div>
           {/*desc */}
-          <p className="hidden md:block text-base md:text-md leading-5 w-[95%] p-4 ">
-            I&apos;m a Full Stack developer who specializes in creating fast and
-            scalable websites with responsive design and great UI. I use
-            Next.js, React, and Tailwind CSS, along with technologies like
-            Firebase, Supabase, Appwrite and MongoDB. I&apos;m exploring some
-            AI/ML and a bit of Azure DevOps as well. Let&apos;s connect and work
-            on something cool together!
-          </p>
+          <div
+            className="hidden flex-1 md:block text-base lg:text-md leading-5 lg:w-[95%] p-4
+          space-y-1 "
+          >
+            <p>
+              I&apos;m a Full Stack developer who specializes in creating fast
+              and scalable websites with responsive design and great UI.
+            </p>
+            <p>
+              I use Next.js, React, and Tailwind CSS, along with technologies
+              like Firebase, Supabase, Appwrite and MongoDB. I&apos;m exploring
+              some AI/ML and a bit of DevOps as well.
+            </p>
+            <p>👋 Let&apos;s connect and work on something cool together!</p>
+          </div>
+          {/* socials */}
+          <div className="hidden md:block">
+            <Socials />
+          </div>
         </div>
 
         {/* right */}
-        <div className=" border-t-[1px] border-neutral-500 md:w-[90%] flex flex-col justify-center items-center">
-          <div className="relative">
-            <div
-              className="absolute w-10 h-[90%] bg-[#A7D397] -top-24
-            right-40 rotate-[70deg] z-40"
-            ></div>
-            <div
-              className="absolute w-20 h-[90%] bg-[#A7D397] opacity-40 bottom-0
-            right-28 z"
-            ></div>
-
+        <div className=" md:w-[90%] flex flex-col justify-center items-center">
+          <div className="relative h-full flex">
             <Image
               src={propic}
               alt="proPic"
               width={800}
               height={800}
-              className="w-[400px]"
+              className="w-[400px] self-end"
             />
           </div>
 
@@ -64,14 +70,25 @@ const Hero = () => {
             </h2>
           </div>
           {/*desc */}
-          <p className="md:hidden text-base md:text-md leading-5 w-[95%] p-4">
-            I&apos;m a Full Stack developer who specializes in creating fast and
-            scalable websites with responsive design and great UI. I use
-            Next.js, React, and Tailwind CSS, along with technologies like
-            Firebase, Supabase, Appwrite and MongoDB. I&apos;m exploring some
-            AI/ML and a bit of Azure DevOps as well. Let&apos;s connect and work
-            on something cool together!
-          </p>
+          <div
+            className="md:hidden flex-1 text-base leading-5 w-[95%] p-4
+          space-y-1 "
+          >
+            <p>
+              I&apos;m a Full Stack developer who specializes in creating fast
+              and scalable websites with responsive design and great UI.
+            </p>
+            <p>
+              I use Next.js, React, and Tailwind CSS, along with technologies
+              like Firebase, Supabase, Appwrite and MongoDB. I&apos;m exploring
+              some AI/ML and a bit of DevOps as well.
+            </p>
+            <p>👋 Let&apos;s connect and work on something cool together!</p>
+          </div>
+          {/* socials */}
+          <div className="md:hidden">
+            <Socials />
+          </div>
         </div>
       </div>
     </div>
