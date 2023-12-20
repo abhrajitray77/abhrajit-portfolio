@@ -16,3 +16,16 @@
   }
 }
 
+@layer utilities {
+  .nav-item {
+    @apply leading-5 text-neutral-700 font-semibold cursor-pointer hover:text-neutral-500
+    transition duration-300;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-200;
+  }
+}
+
