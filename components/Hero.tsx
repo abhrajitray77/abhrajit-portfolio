@@ -1,9 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import propic from "@/public/assets/noBgPic.png";
-import { socialLinks } from "@/app/lib/socialsData";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Socials from "./Socials";
 
 const Hero = () => {
@@ -57,6 +54,7 @@ const Hero = () => {
               alt="proPic"
               width={800}
               height={800}
+              priority={true}
               className="w-[400px] self-end"
             />
           </div>
