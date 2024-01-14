@@ -54,6 +54,7 @@ const Hero = () => {
               alt="proPic"
               width={800}
               height={800}
+              priority={true}
               className="w-[400px] self-end"
             />
           </div>

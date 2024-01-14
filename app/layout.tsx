@@ -8,6 +8,8 @@ import { Providers } from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
+
 export const metadata: Metadata = {
   title: "Abhrajit Ray",
   description: "Portfolio site of Abhrajit Ray",
@@ -22,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
+          {/* background patterns */}
           <div className="fixed inset-0 h-full w-full grid-bg -z-50"></div>
           <div
             className="fixed -z-50 top-36 left-10 w-72 h-72 bg-[#afbaec]

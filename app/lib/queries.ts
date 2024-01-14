@@ -12,7 +12,6 @@ query {
          publishedAt,
          coverImage {
            attribution
-           photographer
            url
          },
          content{
