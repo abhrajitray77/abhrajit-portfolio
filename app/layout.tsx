@@ -5,10 +5,11 @@ import "./styles/bg-patterns.css";
 import Header from "@/components/Header";
 import SideStrips from "@/components/SideStrips";
 import { Providers } from "./Providers";
+import { futureCondensed, futureHalftone, futureHalftoneItalic, futureItalic, futureNormal, futureSemiItalic } from "./fonts";
 
-const inter = Inter({ subsets: ["latin"] });
-
-
+const inter = Inter({
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Abhrajit Ray",
@@ -22,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${futureNormal.variable} ${futureCondensed.variable}
+      ${futureHalftone.variable} ${futureHalftoneItalic.variable} ${futureSemiItalic.variable}
+      ${futureItalic.variable}`}>
         <Providers>
           {/* background patterns */}
           <div className="fixed inset-0 h-full w-full grid-bg -z-50"></div>
