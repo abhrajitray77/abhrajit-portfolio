@@ -48,9 +48,7 @@ export default function RootLayout({
             className="fixed -z-50 bottom-10 right-10 w-72 h-72 bg-[#afbaec]
         rounded-full blur-3xl opacity-50"
           ></div>
-          <header>
-            <Header />
-          </header>
+          <Header />
           {children}
         </Providers>
       </body>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const RightSide = () => {
   return (
-    <div className="flex flex-col h-full md:w-fit mx-1 md:mx-2 diag-lines">
+    <div className="flex flex-col h-full md:w-fit ml-2 diag-lines">
         {/* Hello text */}
         <div className="mt-auto bg-neutral-100 px-1 lg:px-2 lg:py-2 pt-6
         w-fit"
