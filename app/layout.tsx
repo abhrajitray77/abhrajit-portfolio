@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import SideStrips from "@/components/SideStrips";
 import { Providers } from "./Providers";
 import { futureCondensed, futureHalftone, futureHalftoneItalic, futureItalic, futureNormal, futureSemiItalic } from "./fonts";
+import LeftSide from "@/components/LeftSide";
+import RightSide from "@/components/RightSide";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -38,8 +40,9 @@ export default function RootLayout({
         rounded-full blur-3xl opacity-50"
           ></div>
           <div className="flex">
+            {/* left */}
             <div className="hidden md:block">
-              <SideStrips />
+              <LeftSide />
             </div>
             <div className="flex-1">
               <header>
@@ -47,9 +50,9 @@ export default function RootLayout({
               </header>
               {children}
             </div>
-
+            {/* right */}
             <div className="hidden md:block">
-              <SideStrips />
+              <RightSide />
             </div>
           </div>
         </Providers>

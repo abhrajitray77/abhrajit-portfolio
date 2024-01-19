@@ -13,14 +13,15 @@ const Hero = () => {
         {/* left */}
         <div className="flex w-full border-r-[1px] border-neutral-500 flex-col">
           <div className="px-4 py-2 border-b-[1px] border-neutral-500">
-            <h1 className="flex flex-col text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase font-extrabold">
-              <span>Abhrajit</span>
-              <span>Ray</span>
+            <h1 className="flex flex-col text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase font-extrabold
+            md:mx-auto md:w-fit">
+              Abhrajit Ray
             </h1>
           </div>
 
           <div className="px-4 py-2 border-b-[1px] border-neutral-500 bg-[#96B6C5]">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl uppercase text-neutral-200 font-extralight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl uppercase text-neutral-200 font-extralight
+            md:text-center">
               Developer
             </h2>
           </div>
@@ -62,14 +63,14 @@ const Hero = () => {
           <div className="self-start w-full border-t-[1px] border-neutral-500 px-4 py-2 bg-[#96B6C5]">
             <h2
               className="text-2xl md:text-3xl lg:text-4xl uppercase text-neutral-200  
-            font-extralight"
+            font-extralight md:text-center"
             >
               Technical Writer
             </h2>
           </div>
           {/*desc */}
           <div
-            className="md:hidden flex-1 text-base leading-5 w-[95%] p-4
+            className="md:hidden flex-1 text-base leading-5 p-4
           space-y-1 "
           >
             <p>
