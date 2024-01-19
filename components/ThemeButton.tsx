@@ -18,8 +18,8 @@ const ThemeButton = () => {
   return (
     <div
       onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
-      className="cursor-pointer bg-neutral-100 rounded-3xl w-20 h-10 flex
-      p-1 border-[1.5px] border-neutral-900 dark:border-neutral-200"
+      className="cursor-pointer bg-neutral-100 rounded-full w-10 h-10 flex
+      p-1 border-[2px] border-neutral-900 dark:border-neutral-200"
     >
       {currentTheme === "light" ? (
         <div className="w-7">
