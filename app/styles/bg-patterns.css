@@ -61,13 +61,12 @@
 }
 
 .diag-lines {
-  background-color: #ff5454;
   opacity: 1;
   background: repeating-linear-gradient(
     45deg,
     #ffffff00,
     #ffffff00 8px,
-    #ff5454 8px,
-    #ff5454 20px
+    #ffffff 6px,
+    #ffffff 30px
   );
 }

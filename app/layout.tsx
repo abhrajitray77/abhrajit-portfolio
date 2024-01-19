@@ -5,13 +5,20 @@ import "./styles/bg-patterns.css";
 import Header from "@/components/Header";
 import SideStrips from "@/components/SideStrips";
 import { Providers } from "./Providers";
-import { futureCondensed, futureHalftone, futureHalftoneItalic, futureItalic, futureNormal, futureSemiItalic } from "./fonts";
+import {
+  futureCondensed,
+  futureHalftone,
+  futureHalftoneItalic,
+  futureItalic,
+  futureNormal,
+  futureSemiItalic,
+} from "./fonts";
 import LeftSide from "@/components/LeftSide";
 import RightSide from "@/components/RightSide";
 
 const inter = Inter({
-  subsets: ['latin'],
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Abhrajit Ray",
@@ -25,9 +32,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${futureNormal.variable} ${futureCondensed.variable}
+      <body
+        className={`${inter.className} ${futureNormal.variable} ${futureCondensed.variable}
       ${futureHalftone.variable} ${futureHalftoneItalic.variable} ${futureSemiItalic.variable}
-      ${futureItalic.variable}`}>
+      ${futureItalic.variable}`}
+      >
         <Providers>
           {/* background patterns */}
           <div className="fixed inset-0 h-full w-full grid-bg -z-50"></div>
@@ -39,22 +48,10 @@ export default function RootLayout({
             className="fixed -z-50 bottom-10 right-10 w-72 h-72 bg-[#afbaec]
         rounded-full blur-3xl opacity-50"
           ></div>
-          <div className="flex">
-            {/* left */}
-            <div className="hidden md:block">
-              <LeftSide />
-            </div>
-            <div className="flex-1">
-              <header>
-                <Header />
-              </header>
-              {children}
-            </div>
-            {/* right */}
-            <div className="hidden md:block">
-              <RightSide />
-            </div>
-          </div>
+          <header>
+            <Header />
+          </header>
+          {children}
         </Providers>
       </body>
     </html>
