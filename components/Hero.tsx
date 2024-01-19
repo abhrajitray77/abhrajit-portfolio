@@ -33,8 +33,8 @@ const Hero = () => {
             </div>
             {/*desc */}
             <div
-              className="hidden flex-1 md:block text-base lg:text-md leading-5 lg:w-[95%] p-4
-          space-y-1 "
+              className="hidden flex-1 md:block text-base lg:text-md leading-5 lg:w-[95%] p-4 lg:px-4 
+              lg:pt-4 lg:pb-10 space-y-1 "
             >
               <p>
                 I&apos;m a Full Stack developer who specializes in creating fast
@@ -74,7 +74,7 @@ const Hero = () => {
                 Technical Writer
               </h2>
             </div>
-            {/*desc */}
+            {/*Mobile desc */}
             <div
               className="md:hidden flex-1 text-base leading-5 p-4
           space-y-1 "

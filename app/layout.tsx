@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "./styles/bg-patterns.css";
 import Header from "@/components/Header";
-import SideStrips from "@/components/SideStrips";
 import { Providers } from "./Providers";
 import {
   futureCondensed,
@@ -13,8 +12,6 @@ import {
   futureNormal,
   futureSemiItalic,
 } from "./fonts";
-import LeftSide from "@/components/LeftSide";
-import RightSide from "@/components/RightSide";
 
 const inter = Inter({
   subsets: ["latin"],
