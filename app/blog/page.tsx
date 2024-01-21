@@ -1,7 +1,6 @@
 import React from 'react'
 import { getClient } from '../lib/graphQlClient';
 import { getPost } from '../lib/queries';
-import Image from 'next/image';
 import BlogCard from './components/BlogCard';
 
 const blog = async () => {
@@ -16,9 +15,9 @@ const blog = async () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {
-            data.me.posts.nodes.map((post:any) => {
+            data.me.posts.nodes.map((post:any, index: number) => {
               return (
-                <BlogCard key={post?._id} post={post} />
+                <BlogCard key={index} post={post} />
               )
             })
           }
