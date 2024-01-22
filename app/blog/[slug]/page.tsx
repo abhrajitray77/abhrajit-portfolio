@@ -3,6 +3,8 @@ import { getPost } from "@/app/lib/queries";
 import { BlogPostData } from "@/types/blogTypes";
 import { notFound } from "next/navigation";
 import React from "react";
+import MarkdownRenderer from "./components/MarkdownBlock";
+import Image from "next/image";
 
 type PostProps = {
   params: {
@@ -29,9 +31,16 @@ const PostPage = async ({ params }: PostProps) => {
   if (!post) return notFound();
 
   return (
-    <article>
+    <article className="max-w-7xl mx-auto p-4 lg:p-8">
       <h1>{post?.title}</h1>
+      <Image
+      src={post?.coverImage?.url}
+      alt={post?.coverImage?.attribution}
+      width={1000}
+      height={800}
+      />
       <p>{post?.brief}</p>
+      <MarkdownRenderer content={post?.content?.markdown} />
     </article>
   );
 };
