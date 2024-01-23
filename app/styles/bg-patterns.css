@@ -60,4 +60,13 @@
   background-size: 28px 28px;
 }
 
-
+.diag-lines {
+  opacity: 1;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffffff00,
+    #ffffff00 8px,
+    #FF7a5c 6px,
+    #FF7a5c 30px
+  );
+}
