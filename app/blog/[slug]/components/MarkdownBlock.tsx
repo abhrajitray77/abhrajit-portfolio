@@ -1,8 +1,5 @@
 import "katex/dist/katex.min.css";
-
 import React from "react";
-
-import { Barlow } from "next/font/google";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -10,9 +7,8 @@ import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-
 import fallbackImg from "@/public/assets/gradient.webp";
-
+import rehypeRaw from "rehype-raw";
 
 interface MarkdownRendererProps {
   content: string;
@@ -39,7 +35,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     <ReactMarkdown
       className={`leading-relaxed tracking-wide whitespace-pre-wrap`}
       remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: true }]]}
-      rehypePlugins={[rehypeKatex, rehypeSlug, rehypeAutolinkHeadings]}
+      rehypePlugins={[rehypeKatex, rehypeSlug, rehypeAutolinkHeadings, rehypeRaw]}
       components={{
 /*         code(props) {
           const { children, className } = props;
@@ -124,51 +120,75 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
             <h6 className="text-base font-semibold md:text-lg">{children}</h6>
           );
         },
-        // p: ({ children, node }) => {
-        //   // @ts-ignore
-        //   if (node.children[0].tagName === "img") {
-        //     const image = node?.children[0];
-        //     // @ts-ignore
-        //     const metastring = image.properties.alt;
-        //     const alt = metastring?.replace(/ *\{[^)]*\} */g, "");
-        //     const metaWidth = metastring.match(/\{(\d+)x/);
-        //     const metaHeight = metastring.match(/x(\d+)\}/);
-        //     const width = metaWidth ? metaWidth[1] : "800";
-        //     // only values in multiples of 100s work
-        //     const height = metaHeight ? metaHeight[1] : "400";
-        //     const isPriority = metastring?.toLowerCase().match("{priority}");
-        //     const hasCaption = metastring?.toLowerCase().includes("{caption:");
-        //     const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
-        //     return (
-        //       <div
-        //         className={`w-full h-[${height}px] border-[1px] border-border p-2 rounded-xl`}
-        //       >
-        //         <Image
-        //           // @ts-ignore
-        //           src={image.properties.src || fallbackImg}
-        //           width={width}
-        //           height={height}
-        //           className="object-cover rounded-lg w-full h-[revert-layer]"
-        //           alt={alt}
-        //           priority={isPriority}
-        //         />
-        //         {hasCaption ? (
-        //           <div className="text-sm text-muted" aria-label={caption}>
-        //             {caption}
-        //           </div>
-        //         ) : null}
-        //       </div>
-        //     );
-        //   }
-        //   return (
-        //     <p
-        //       className={`${barlow.variable} font-markdown text-base md:text-lg font-normal`}
-        //     >
-        //       {children}
-        //     </p>
-        //   );
-        //},
-      }}
+        // @ts-ignore
+        p: ({ node }) => {
+          // @ts-ignore
+          if (node?.tagName === 'p' && node?.children?.length === 3 && node?.children[0]?.value?.includes('!', '[', ']')) {
+            console.log("Inside if", node?.children[0]?.data);
+            // @ts-ignore
+            const imageUrl = node.children[1].properties.href;
+    
+            // Render the Image component with the extracted URL
+            return (
+              <Image
+                alt="article image"
+                src={imageUrl}
+                width={800}
+                height={500}
+                className="max-w-[800px] max-h-[800px]"
+              />
+            );
+          }
+        },
+        
+      //   p: ({ children, node }) => {
+      //     console.log("node details", node?.children[0]);
+      //     // @ts-ignore
+      //     if (node.children[0]?.tagName === "img") {
+      //       const image = node?.children[0];
+      //       console.log(image, "this is img url");
+      //       // @ts-ignore
+      //       const metastring = image.properties.alt;
+      //       const alt = metastring?.replace(/ *\{[^)]*\} */g, "");
+      //       // @ts-ignore
+      //       const metaWidth = metastring.match(/\{(\d+)x/);
+      //       const metaHeight = metastring.match(/x(\d+)\}/);
+      //       const width = metaWidth ? metaWidth[1] : "800";
+      //       // only values in multiples of 100s work
+      //       const height = metaHeight ? metaHeight[1] : "400";
+      //       const isPriority = metastring?.toLowerCase().match("{priority}");
+      //       const hasCaption = metastring?.toLowerCase().includes("{caption:");
+      //       const caption = metastring?.match(/{caption: (.*?)}/)?.pop();
+      //       return (
+      //         <div
+      //           className={`w-full h-[${height}px] border-[1px] border-border p-2 rounded-xl`}
+      //         >
+      //           <Image
+      //             // @ts-ignore
+      //             src={image.properties.src || fallbackImg}
+      //             width={width}
+      //             height={height}
+      //             className="object-cover rounded-lg w-full h-[revert-layer]"
+      //             alt={alt}
+      //             priority={isPriority}
+      //           />
+      //           {hasCaption ? (
+      //             <div className="text-sm text-muted" aria-label={caption}>
+      //               {caption}
+      //             </div>
+      //           ) : null}
+      //         </div>
+      //       );
+      //     }
+      //     return (
+      //       <p
+      //         className={`text-base md:text-lg font-normal`}
+      //       >
+      //         {children}
+      //       </p>
+      //     );
+      //  },
+       }}
     >
       {content}
     </ReactMarkdown>
